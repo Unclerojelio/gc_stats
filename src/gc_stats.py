@@ -23,6 +23,9 @@ def print_types():
     earth_caches = []
     event_caches = []
     virtual_caches = []
+    wherigo_caches = []
+    webcam_caches = []
+    cito_caches = []
     other_caches = []
     
     for wpt in root.findall('gpx:wpt', ns):
@@ -40,6 +43,12 @@ def print_types():
             event_caches.append(name)
         elif type == 'Geocache|Virtual Cache':
             virtual_caches.append(name)
+        elif type == 'Geocache|Wherigo Cache':
+            wherigo_caches.append(name)
+        elif type == 'Geocache|Webcam Cache':
+            webcam_caches.append(name)
+        elif type == 'Geocache|Cache In Trash Out Event':
+            cito_caches.append(name)
         else:
             other_caches.append(name)
     
@@ -49,7 +58,13 @@ def print_types():
     print 'Earth Caches: ' + str(len(earth_caches))
     print 'Event Caches: ' + str(len(event_caches))
     print 'Virtual Caches: ' + str(len(virtual_caches))
+    print 'Whereigo Caches: ' + str(len(wherigo_caches))
+    print 'Webcam Caches: ' + str(len(webcam_caches))
+    print 'CITO Caches: ' + str(len(cito_caches))
     print 'Other Caches: ' + str(len(other_caches))
+
+    print other_caches
+
 
 def print_list():
     size = ''
@@ -65,5 +80,5 @@ def print_list():
         
 
 #print num_caches()
-#print_types()
-print_list()
+print_types()
+#print_list()
