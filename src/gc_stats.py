@@ -1,7 +1,14 @@
-# python save.py
+#!/usr/bin/env python
 
+import sys
 import xml.etree.ElementTree as ET
-tree = ET.parse('../data/Adelaide.gpx')
+
+input = sys.stdin
+
+#tree = ET.parse('../data/Adelaide.gpx')
+
+
+tree = ET.parse(input)
 root = tree.getroot()
 
 ns = {'gpx': 'http://www.topografix.com/GPX/1/0',
@@ -80,5 +87,5 @@ def print_list():
         
 
 #print num_caches()
-print_types()
-#print_list()
+#print_types()
+print_list()
